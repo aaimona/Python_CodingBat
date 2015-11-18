@@ -1,0 +1,12 @@
+# Given an array of ints, return True if one of the first 4 elements in the array is a 9.
+# The array length may be less than 4. 
+
+def array_front9(nums):
+	if nums.count(9) != 0:
+		first4 = nums[:4]
+		if first4.count(9) != 0:
+			return True
+		else:
+			return False
+	else:
+		return False
