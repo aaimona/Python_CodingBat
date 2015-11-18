@@ -1,0 +1,10 @@
+# takes a string and returns a new string created by string's first letter, 2 first letters, 3 first letters and so on
+
+def string_splosion(str):
+	if(len(str) <= 1):
+		return str
+	else:
+		new_str = ""
+		for i in range(0, len(str) + 1):
+			new_str = new_str + str[:i]
+	return new_str
