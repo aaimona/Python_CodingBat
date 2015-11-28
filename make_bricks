@@ -1,0 +1,8 @@
+# you want to make a row of bricks that is goal bricks long. write a function that checks if it's possible with
+# given set of bricks (small is 1 brick, big is 5 bricks long).
+
+def make_bricks(small, big, goal):
+	if small + big * 5 >= goal and goal % 5 <= small:
+		return True
+	else:
+		return False
