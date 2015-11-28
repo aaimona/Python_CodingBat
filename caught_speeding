@@ -1,0 +1,12 @@
+# you're driving and a policeman stops you. if < 61, no ticket. if 61 <= speed < 81, small ticket. Else - big ticket. 
+# However, if it's your bday, the speed limit is 5 km/h more in each case.
+
+def caught_speeding(speed, is_birthday):
+	if is_birthday == True:
+		speed = speed -5
+	if speed < 61:
+		return 0
+	elif speed >= 61 and speed < 81:
+		return 1
+	else:
+		return 2
