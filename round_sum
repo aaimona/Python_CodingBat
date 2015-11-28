@@ -1,0 +1,13 @@
+# return sum of rounded values a, b, c. rounding goes as follows: to the nearest 10, if ends with <5, you round down,
+# if >=5, you round up. You should use a helper function in order not to repeat the code 3 times while summing.
+
+def round_sum(a, b, c):
+	return round10(a) + round10(b) + round10(c)
+
+def round10(num):
+	modulo = num % 10
+	if modulo < 5:
+		num = num - modulo
+	else:
+		num = num + 10 - modulo
+	return num
