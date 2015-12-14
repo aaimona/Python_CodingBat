@@ -1,0 +1,13 @@
+# Given an array length 1 or more of ints, return the difference between the largest and smallest 
+# values in the array. Note: the built-in min(v1, v2) and max(v1, v2) functions return the smaller or 
+# larger of two values. 
+
+def big_diff(nums):
+	nmin = nums[0]                        # there must be a starting value, and it can't be 0 since there's a possibility that the list
+	nmax = nums[0]                        # does not contain elements less than 0 (if so, we won't have the smallest value)
+	for i in range(1, len(nums)):         # starting from 1 because nums[0] is already taken and checking it doesn't make sense
+		if nums[i] < nmin:
+			nmin = nums[i]
+		if nums[i] > nmax:
+			nmax = nums[i]
+	return nmax - nmin
