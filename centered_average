@@ -1,0 +1,22 @@
+# Return the "centered" average of an array of ints, which we'll say is the mean average of the 
+# values, except ignoring the largest and smallest values in the array. If there are multiple copies 
+# of the smallest value, ignore just one copy, and likewise for the largest value. Use int division to 
+# produce the final average. You may assume that the array is length 3 or more.
+
+def centered_average(nums):       # it would be a lot easier and shorter if i could use built-in functions such as sort()
+	nmin = nums[0]                  # anyway, good practice :) another version of this exercice would be to rewrite the code 
+	nmax = nums[0]                  # so that it neither modifies the given array nor creates additional array, e.g. for values
+	for i in range(1,len(nums)):    # that are to be averaged
+		if nums[i] < nmin:
+			nmin = nums[i]
+		if nums[i] > nmax:
+			nmax = nums[i]
+	for i in range(0,len(nums)):
+		if nums[i] == nmin:
+			del nums[i]                 # modifying the given array
+			break
+	for i in range(0,len(nums)):
+		if nums[i] == nmax:
+			del nums[i]                 # modyfying the given array
+			break
+	return sum(nums)/len(nums)
